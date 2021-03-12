@@ -3,14 +3,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인페이지</title>
+    <title>세부내용</title>
 </head>
 <body>
+    <a href="/">홈</a>
     <ul>
-        <li><a href="/">홈</a></li>
-        <li><a href="/address">주소록</a></li>
-        <li><a href="/new">주소록 추가하기</a></li>
+        <% addresses.forEach(function(i){%>
+        <li><a href="/address/<%= i._id%>"><%= i.name %></a></li>
+        <%})%>
     </ul>
-    <h1>메인페이지 입니다.</h1>
 </body>
 </html>

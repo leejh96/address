@@ -1,7 +1,10 @@
 const express = require('express');
 const indexRouter = require('./routes/index');
 const newRouter = require('./routes/new');
+const addressRouter = require('./routes/address');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+
 require('dotenv').config();
 const app = express();
 
@@ -23,9 +26,11 @@ db.on('error', (err)=>{
 app.use(express.static(__dirname+ '/public'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/new', newRouter);
+app.use('/address', addressRouter);
 app.listen(3000, ()=>{
     console.log('서버에 연결되었습니다.');
 })

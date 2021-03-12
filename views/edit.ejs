@@ -1,0 +1,17 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수정페이지</title>
+</head>
+<body>
+    <a href="/">홈</a>
+    <form action="/address/<%= address._id %>?_method=put" method="post">
+        <p>이름 : <input type="text" name="name"></p>
+        <p>이메일 : <input type="email" name="email"></p>
+        <p>전화번호 : <input type="text" name="phone"></p>
+        <input type="submit" value="수정">
+    </form>
+</body>
+</html>

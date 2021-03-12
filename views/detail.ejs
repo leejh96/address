@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>상세정보</title>
 </head>
 <body>
     <a href="/">홈</a>
@@ -12,5 +12,13 @@
         <li>이메일 : <%=address.email%></li>
         <li>전화번호 : <%=address.phone%></li>
     </ul>
+    
+    <a href="/address/<%=address._id%>/edit">수정</a>
+    <span>
+        <form action="/address/<%= address._id %>?_method=delete" method="post">
+            <a href="#" onclick="confirm('삭제하시겠습니까?')?this.parentElement.submit():null;">삭제</a>
+        </form>
+    </span>
+
 </body>
 </html>
